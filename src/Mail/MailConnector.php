@@ -18,27 +18,27 @@ class MailConnector
   /**
    * @var object Boîte de réception
    */
-  private $mailbox;
+  protected $mailbox;
 
   /**
    * @var string Serveur mail, port, protocole, dossier (exemple : '{imap.gmail.com:993/imap/ssl}INBOX')
    */
-  private $host;
+  protected $host;
 
   /**
    * @var string Nom d'utilisateur
    */
-  private $user;
+  protected $user;
 
   /**
    * @var string Mot de passe du compte
    */
-  private $pass;
+  protected $pass;
 
   /**
    * @var string Encryption type
    */
-  private $encryption;
+  protected $encryption;
 
   /**
    * Constructeur

@@ -22,32 +22,32 @@ class MailSender
   /**
    * @var array  Emails de destination
    */
-  private $receivers = array();
+  protected $receivers = array();
 
   /**
    * @var array  Emails de destination en copie conforme
    */
-  private $receiversCC = array();
+  protected $receiversCC = array();
 
   /**
    * @var array  Emails de destination en copie conforme invisible
    */
-  private $receiversCCI = array();
+  protected $receiversCCI = array();
 
   /**
    * @var array  Pièces jointes
    */
-  private $attachments = array();
+  protected $attachments = array();
 
   /**
    * @var array  Headers
    */
-  private $xheaders = array();
+  protected $xheaders = array();
 
   /**
    * @var array  Referentiel de priorités
    */
-  private $priorities = array(
+  protected $priorities = array(
     self::MAIL_PRIORITY_HIGHEST => '1 (Highest)',
     self::MAIL_PRIORITY_HIGH    => '2 (High)',
     self::MAIL_PRIORITY_NORMAL  => '3 (Normal)',
@@ -58,27 +58,27 @@ class MailSender
   /**
    * @var string  Charset utilisé
    */
-  private $charset = "utf-8";
+  protected $charset = "utf-8";
 
   /**
    * @var string  Bits encoding
    */
-  private $ctencoding = "8bit";
+  protected $ctencoding = "8bit";
 
   /**
    * @var string  Contenu du mail
    */
-  private $mailContent = null;
+  protected $mailContent = null;
 
   /**
    * @var string  Type de contenu
    */
-  private $mailContentType = 'text';
+  protected $mailContentType = 'text';
 
   /**
    * @var string  Clé unique
    */
-  private $boundary = null;
+  protected $boundary = null;
 
   /**
    * Constructeur
@@ -299,7 +299,7 @@ class MailSender
   /**
    * Construit le contenu du mail
    */
-  private function buildMail()
+  protected function buildMail()
   {
     // On construit les headers
     $this->headers = "";
@@ -340,7 +340,7 @@ class MailSender
    *
    * @throws \Exception
    */
-  private function buildAttachments()
+  protected function buildAttachments()
   {
     $this->xheaders["Content-Type"] = "multipart/mixed;\n boundary=\"$this->boundary\"";
 
