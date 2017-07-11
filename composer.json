@@ -16,7 +16,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.0",
-        "ext-imap": "*",
         "ssilence/php-imap-client": "~2.0"
     },
     "autoload": {
