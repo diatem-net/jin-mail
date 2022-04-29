@@ -328,11 +328,12 @@ class MailSender
     }
 
     reset($this->xheaders);
-    while (list($hdr, $value ) = each($this->xheaders)) {
+    foreach($this->xheaders AS $hdr => $value){
       if ($hdr != "Subject") {
         $this->headers .= "$hdr: $value\n";
       }
     }
+
   }
 
   /**
